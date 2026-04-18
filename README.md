@@ -44,7 +44,7 @@ The `export.sh` script will take care of generating a single binary blob includi
 3. Combine everything in a single binary blob that can be flashed from address 0x0 using [espflash](https://github.com/esp-rs/espflash/releases)
 
 ```
-espflash write-bin -b 115200 0x0 S3.bin
+espflash write-bin -B 115200 0x0 S3.bin
 ```
 
 ## Update your board
