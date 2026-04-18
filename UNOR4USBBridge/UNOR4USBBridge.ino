@@ -136,7 +136,7 @@ void setup() {
   digitalWrite(GPIO_RST, HIGH);
 
 #ifdef DEBUG_AT
-  SERIAL_AT.begin(115200);
+  SERIAL_AT.begin(921600);
   while (!SERIAL_AT);
   SERIAL_AT.println("READY");
 #else
@@ -149,15 +149,15 @@ void setup() {
   DAP.begin();
   SERIAL_USER.onEvent(usbEventCallback);
   SERIAL_USER.enableReboot(false);
-  SERIAL_USER.begin(115200);
+  SERIAL_USER.begin(921600);
   SERIAL_USER.setRxBufferSize(0);
   SERIAL_USER.setRxBufferSize(2048);
   SERIAL_USER_INTERNAL.setRxBufferSize(8192);
   SERIAL_USER_INTERNAL.setTxBufferSize(8192);
-  SERIAL_USER_INTERNAL.begin(115200, SERIAL_8N1, 44, 43);
+  SERIAL_USER_INTERNAL.begin(921600, SERIAL_8N1, 44, 43);
   SERIAL_AT.setRxBufferSize(8192);
   SERIAL_AT.setTxBufferSize(8192);
-  SERIAL_AT.begin(115200, SERIAL_8N1, 6, 5);
+  SERIAL_AT.begin(921600, SERIAL_8N1, 6, 5);
   USB.begin();
 #endif
   /* Set up wifi event */
